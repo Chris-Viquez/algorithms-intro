@@ -1,7 +1,9 @@
-#include "Ordenador.h"
-#include "selection.h"
-#include "insertion.h"
+#include "selectionsort.h"
+#include "insertionsort.h"
 #include "mergesort.h"
+#include "heapsort.h"
+#include "quicksort.h"
+#include "radixsort.h"
 
 #include <iostream>
 #include <random>
@@ -11,7 +13,6 @@
 
 using namespace std; 
 using namespace chrono;
-using namespace sort;
 
 
 void printArray(int *A , int n){
@@ -36,11 +37,9 @@ int main(){
 
     //printArray(A,n);
 
-    Ordenador Ord;
-
     //tiempo y ordenamiento
     uint64_t time1 = duration_cast< milliseconds >(system_clock::now().time_since_epoch()).count();
-    Ord.radixsort(A , n);
+    sort::radixsort(A , n);
     uint64_t time2 = duration_cast< milliseconds >(system_clock::now().time_since_epoch()).count();
 
     //printArray(A,n);
