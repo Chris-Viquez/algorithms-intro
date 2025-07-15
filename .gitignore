@@ -1,7 +1,11 @@
 # Prerequisites
 *.d
 
+# VSCode settings
+.vscode/
+
 # Compiled Object files
+build/
 *.slo
 *.lo
 *.o
@@ -33,6 +37,7 @@
 *.lib
 
 # Executables
+bin/
 *.exe
 *.out
 *.app
