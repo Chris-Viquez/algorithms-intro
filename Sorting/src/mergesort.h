@@ -14,8 +14,8 @@ namespace sort
 		for (int j = 0 ; j < n2 ; j++) {
 			R[j] = A[q + 1 + j];
 		}
-		L[n1] = numeric_limits<int>::max();
-		R[n2] = numeric_limits<int>::max();
+		L[n1] = std::numeric_limits<int>::max();
+		R[n2] = std::numeric_limits<int>::max();
 
 		int i = 0;
 		int j = 0;
