@@ -29,20 +29,24 @@ int main(){
     uniform_int_distribution<unsigned long long> dis(-1000000, 1000000);
 
     
-    int n = 100000;
+    int n = 50;
     int* A = new int[n];
     for (int i = 0 ; i < n ; i++) {
         A[i] = dis(gen);
     }
 
-    //printArray(A,n);
+    cout << "Unsorted list" << endl;
+    printArray(A,n);
+    cout << endl << endl;
 
-    //tiempo y ordenamiento
-    uint64_t time1 = duration_cast< milliseconds >(system_clock::now().time_since_epoch()).count();
+    // time needed for sorting the list
+    uint64_t time1 = duration_cast< microseconds >(system_clock::now().time_since_epoch()).count();
     sort::radixsort(A , n);
-    uint64_t time2 = duration_cast< milliseconds >(system_clock::now().time_since_epoch()).count();
+    uint64_t time2 = duration_cast< microseconds >(system_clock::now().time_since_epoch()).count();
 
-    //printArray(A,n);
+    cout << "Sorted list" << endl;
+    printArray(A,n);
+    cout << endl;
 
     for (int i = 1 ; i < n ; i++) {
         if (A[i-1] > A[i]) {
@@ -52,5 +56,5 @@ int main(){
     }
 
     uint64_t totalTime = time2 - time1;
-    cout << "Tiempo Total: " << totalTime << endl;
+    cout << "Total Time: " << totalTime << endl;
 }
