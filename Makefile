@@ -285,8 +285,8 @@ ifeq (0, $(shell which brew > /dev/null 2>&1; echo $$?)) # macOS
 else ifeq (0, $(shell which dnf > /dev/null 2>&1; echo $$?)) # RedHat-based
 	INSDEPS=sudo dnf install @development-tools java-21-openjdk libasan libtsan libubsan $(LINDEPS)
 	PIPDEPS=&& pipx ensurepath && pipx install icdiff && pipx install cpplint
-else ifeq (0, $(shell which apt > /dev/null 2>&1; echo $$?)) # Debian-based
-	INSDEPS=sudo apt install build-essential cpplint icdiff openjdk-17-jdk $(LINDEPS)
+else ifeq (0, $(shell which apt > /dev/null 2>&1; echo $$?)) # Debian-based (borre cpplint)
+	INSDEPS=sudo apt install build-essential icdiff openjdk-17-jdk $(LINDEPS)
 else
 	INSDEPS=@>&2 echo "ERROR: Package manager not supported"
 endif
